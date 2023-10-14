@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(request) {
   return NextResponse.json({
     name: "hayami",
     age: 52,
-    coutry: "Japan",
+    country: "Japan",
   });
 }
