@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function Challenge() {
   const [foods, setFoods] = useState([]);
+  const [visible, setVisible] = useState(false);
 
   const onSubmit = async () => {
     try {
@@ -12,34 +13,38 @@ export default function Challenge() {
         .then((res) => res.text())
         .then((food) => {
           setFoods(JSON.parse(food));
-          // console.log(food);
         });
     } catch (err) {
       alert(err);
     }
+    setVisible(!visible);
+    console.log(visible);
   };
 
   return (
     <>
       <h1>This is Challenge Page New</h1>
       <button onClick={onSubmit}>サブミット</button>
-      <ul>
-        {foods ? (
-          foods.map((food) => (
-            <li key={food.name}>
-              <p>
-                商品名:{food.name}
-                <br />
-                説明:{food.description}
-                <br />
-                値段:{food.price}
-              </p>
-            </li>
-          ))
-        ) : (
-          <p>データなし</p>
-        )}
-      </ul>
+
+      {visible ? (
+        <ul>
+          {foods ? (
+            foods.map((food) => (
+              <li key={food.name}>
+                <p>
+                  商品名:{food.name}
+                  <br />
+                  説明:{food.description}
+                  <br />
+                  値段:{food.price}
+                </p>
+              </li>
+            ))
+          ) : (
+            <p>データなし</p>
+          )}
+        </ul>
+      ) : null}
     </>
   );
 }
