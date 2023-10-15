@@ -10,7 +10,7 @@ export default function Challenge() {
         .then((res) => res.text())
         .then((food) => {
           setFoods(JSON.parse(food));
-          console.log(food);
+          // console.log(food);
         });
     } catch (err) {
       alert(err);
