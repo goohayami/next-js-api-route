@@ -10,20 +10,20 @@ export default function About() {
         "https://next-js-api-route-lilac.vercel.app/api/hello"
       );
       const data = await response.json();
-      //   console.log(api);
-      setApi(api.data);
 
-      console.log(api);
+      setApi([data.name, data.age, data.country]);
     };
     fetchUsers();
+    console.log(api);
   }, []);
 
   return (
     <>
       <h1>This is AboutPage</h1>
       <p>And api router testing</p>
-      <h1>{api}</h1>
-      <h1>{api}</h1>
+      <h1>{api[0]}</h1>
+      <h1>{api[1]}</h1>
+      <h1>{api[2]}</h1>
       <div>
         {/* <ul>
           {users.map((user) => (
