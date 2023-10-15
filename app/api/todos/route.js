@@ -17,5 +17,10 @@ export async function GET(request) {
       description: "サグ系にハマっています",
       price: 1400,
     },
+    {
+      name: "親子丼",
+      description: "新鮮卵を使っています",
+      price: 1000,
+    },
   ]);
 }
