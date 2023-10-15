@@ -1,7 +1,11 @@
 import About from "./About/page";
 import Challenge from "./Challenge/page";
 
-
 export default function Home() {
-  return <Challenge />;
+  return (
+    <>
+      <About />
+      <Challenge />
+    </>
+  );
 }
