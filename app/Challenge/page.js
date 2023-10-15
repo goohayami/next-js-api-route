@@ -6,7 +6,9 @@ export default function Challenge() {
 
   const onSubmit = async () => {
     try {
-      const res = await fetch("/api/todos")
+      const res = await fetch(
+        "https://next-js-api-route-snowy.vercel.app/api/todos"
+      )
         .then((res) => res.text())
         .then((food) => {
           setFoods(JSON.parse(food));
