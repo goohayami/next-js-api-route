@@ -19,7 +19,7 @@ export default function Challenge() {
 
   return (
     <>
-      <h1>This is Challenge Page</h1>
+      <h1>This is Challenge Page New</h1>
       <button onClick={onSubmit}>サブミット</button>
       <ul>
         {foods ? (
